@@ -1,0 +1,13 @@
+<div class="container">
+    <ng-container *ngIf="userRole !== 'Download'; else tableView">
+        <app-dashboard-cards *ngFor="let card of dashboardCards" [title]="card.title" [number]="card.number" [icon]="card.icon"></app-dashboard-cards>
+    </ng-container>
+
+    <ng-template #tableView>
+        <app-basic-table
+          [title]="downloadHistory.title"
+          [columns]="downloadHistory.columns"
+          [data]="downloadHistory.data"
+        ></app-basic-table>
+    </ng-template>
+</div>

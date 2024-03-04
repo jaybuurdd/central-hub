@@ -1,0 +1,10 @@
+<div class="container">
+    <ng-container>
+        <app-interactive-table
+        [title]="userList.title"
+        [columns]="userList.columns"
+        [data]="userList.data"
+        (rowClick)="handleRowClick($event)">
+        </app-interactive-table>
+    </ng-container>
+</div>

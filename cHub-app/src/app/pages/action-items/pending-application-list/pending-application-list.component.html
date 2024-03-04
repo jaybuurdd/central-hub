@@ -1,0 +1,11 @@
+<div class="container">
+  <ng-container>
+    <app-interactive-table
+      [title]="applicationList.title"
+      [columns]="applicationList.columns"
+      [data]="applicationList.data"
+      [action]="applicationList.action"
+      (rowClick)="handleRowClick($event)">
+    </app-interactive-table>
+  </ng-container>
+</div>

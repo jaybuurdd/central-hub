@@ -1,2 +1,3 @@
-# central-hub
-Angular code exerccise
+# Central Hub
+
+Angular code exerccise.

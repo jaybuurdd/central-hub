@@ -1,0 +1,11 @@
+<div class="login-container">
+    <h2>Select a Role to Sign In</h2>
+    <div class="roles-list">
+      <button mat-button (click)="setRole(APP_ROLES.helpDesk)">{{ APP_ROLES.helpDesk }}</button>
+      <button mat-button (click)="setRole(APP_ROLES.administrator)">{{ APP_ROLES.administrator }}</button>
+      <button mat-button (click)="setRole(APP_ROLES.fullControl)">{{ APP_ROLES.fullControl }}</button>
+      <button mat-button (click)="setRole(APP_ROLES.download)">{{ APP_ROLES.download }}</button>
+      <button mat-button (click)="setRole(APP_ROLES.read)">{{ APP_ROLES.read }}</button>
+    </div>
+</div>
+  

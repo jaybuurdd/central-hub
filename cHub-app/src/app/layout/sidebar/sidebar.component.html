@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" [(opened)]="isExpanded">
+      <mat-nav-list>
+        <mat-accordion multi="true">
+          <ng-container *ngFor="let item of navItems">
+            <mat-expansion-panel *ngIf="item.children; else singleItem">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon *ngIf="item.icon">{{item.icon}}</mat-icon>
+                  {{item.label}}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <a *ngFor="let child of item.children" [routerLink]="child.path" mat-list-item>
+                <mat-icon *ngIf="child.icon">{{child.icon}}</mat-icon>
+                {{child.label}}
+              </a>
+            </mat-expansion-panel>
+            <ng-template #singleItem>
+              <a [routerLink]="item.path" mat-list-item>
+                <mat-icon *ngIf="item.icon">{{item.icon}}</mat-icon>
+                {{item.label}}
+              </a>
+            </ng-template>
+          </ng-container>
+        </mat-accordion>        
+      </mat-nav-list>
+      <div  *ngIf="hasBottomNav()" class="sidebar-bottom-buttons">
+        <a mat-button [routerLink]="'/help-desk'" class="bottom-button">Help Desk</a>
+        <a mat-button [routerLink]="'/system-faq'" class="bottom-button">System FAQ</a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+      <button class="sidenav-btn" mat-icon-button (click)="isExpanded = !isExpanded">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

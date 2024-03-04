@@ -1,0 +1,16 @@
+<div class="profile-bar">
+    <div class="profile-container">
+      <div class="left-placeholder"></div>
+      <div class="profile-section">
+        <img src="assets/profile.jpg" alt="User" class="profile-picture">
+        <span class="profile-name">Jaydon, Seppel</span>
+        <mat-icon [matMenuTriggerFor]="profileMenu">more_vert</mat-icon>
+        <mat-menu #profileMenu="matMenu">
+          <button mat-menu-item>My Profile</button>
+          <button mat-menu-item>Settings</button>
+          <button mat-menu-item (click)="onLogout()">Logout</button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+  
